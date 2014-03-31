@@ -6,6 +6,11 @@ Example files for data streaming from a php script to a web browser using [Oboe.
 The system was successfully tested receiving 20 messages per second in desktop and mobile platforms.
 
 
+Any problems?
+-------------
+Feel free to [write an issue](https://github.com/Makeroni/JSON-Streaming-Javascript/issues) if you have any questions or problems.
+
+
 Copyright and license
 ---------------------
 
