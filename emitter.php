@@ -35,13 +35,11 @@ while (true) {
     $msg = "      {\"red\":$red, \"green\":$green, \"blue\":$blue},\n";
     echo $msg;
 
-    # Advance and loop gradient
-    $i = $i + 2;
-    if ($i==128) {
-        $i = 0;
-    }
+    # Advance gradient and loop
+    $i=$i+2;
+    if($i==128){ $i=0; }
     
-    # 50ms between messages (20 per second)
+    # 50ms sleep (20 messages per second)
     usleep(50000);
 }
 ?>
