@@ -18,6 +18,7 @@ for ($i = 0; $i < ob_get_level(); $i++)
     ob_end_flush();
 ob_implicit_flush(1);
 
+# JSON array header
 $msg = "{\n   \"led\": [\n";
 echo $msg;
 
@@ -25,16 +26,22 @@ echo $msg;
 $i=0;
 while (true) {
 
+    # Rainbow gradient
     $red   = (int)(sin($i*2*pi()/128 + 0) * 127 + 128);
     $green = (int)(sin($i*2*pi()/128 + 2) * 127 + 128);
     $blue  = (int)(sin($i*2*pi()/128 + 4) * 127 + 128);
+    
+    # JSON data
     $msg = "      {\"red\":$red, \"green\":$green, \"blue\":$blue},\n";
     echo $msg;
 
+    # Advance and loop gradient
     $i = $i + 2;
     if ($i==128) {
-		$i = 0;
-	}
-    usleep(50000); # 50ms between messages
+        $i = 0;
+    }
+    
+    # 50ms between messages (20 per second)
+    usleep(50000);
 }
 ?>
