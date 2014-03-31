@@ -3,7 +3,7 @@
 header("Cache-Control: no-cache");
 header("Cache-Control: private");
 header("Pragma: no-cache");
-header("Content-Type: application/json");
+header("Content-type: application/json");
 
 # Set this so PHP doesn't timeout during a long stream
 set_time_limit(0);
