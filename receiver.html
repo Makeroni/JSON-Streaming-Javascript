@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>JSON streaming with Oboe.js</title>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="oboe-browser.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script>
+	var counter = 0;
+	$( document ).ready(function() {
+		oboe('emitter.php').node('led.*', function( colour ){
+			$("#button-red").html(colour.red);
+			$("#button-green").html(colour.green);
+			$("#button-blue").html(colour.blue);
+			counter++;
+		});
+		var myInterval = setInterval(function () {
+			$("#button").html(counter+" messages/s");
+			counter = 0;
+		}, 1000);
+	});
+    </script>
+    </head>
+<body>
+	<div class="container col-md-1">
+		<br/>
+		<button id="button-red" type="button" class="btn btn-danger btn-block">Connecting</button>
+		<button id="button-green" type="button" class="btn btn-success btn-block">Connecting</button>
+		<button id="button-blue" type="button" class="btn btn-primary btn-block">Connecting</button>
+		<button id="button" type="button" class="btn btn-block">Connecting</button>
+	</div>
+</body>
+</html>
