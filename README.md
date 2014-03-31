@@ -1,7 +1,7 @@
 JSON streaming using Oboe.js
 ============================
 
-Data streaming from a php script to a web browser using [Oboe](http://oboejs.com/) library.
+Data streaming from a php script to a web browser using [Oboe.js](http://oboejs.com/) library.
 
 The system was successfully tested streaming 20 messages per second in desktop and mobile platforms.
 
